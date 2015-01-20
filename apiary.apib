@@ -135,33 +135,22 @@ HOST: https://bloodflow.herokuapp.com/api
             "__v": 0
         }]        
         
-### Создание пользователя [POST]
+### Добавление статьи - только для админ панели [POST]
 + Request (application/json)
 
         { 
             "title": "Заголовок", 
             "snippet": "Краткое описание статьи", 
-            "lastName":"Иванович",
-            "city": "Днепропетровск", 
-            "phone":"+380661234567", 
-            "email":"demo@gmail.com", 
-            "blood":3, 
-            "rhesus":"+",
-            "ready":true
+            "content":"Полный текст статьи"
         }
 
 + Response 200 (application/json)
 
         {
-            "__v": 0,
-            "firstName": "Иванов",
-            "secondName": "Иван",
-            "lastName": "Иванович",
-            "city": "Днепропетровск",
-            "phone": "+380661234567",
-            "email": "demo@gmail.com",
-            "blood": 3,
-            "rhesus": "+",
-            "ready": true,
-            "_id": "54be9f25d86a515e79dfb8fa"
+            "title": "Заголовок", 
+            "snippet": "Краткое описание статьи", 
+            "content":"Полный текст статьи",
+            "_id": "54bec0d6bc7a3529a75b13d6",
+            "__v": 0
+
         }
