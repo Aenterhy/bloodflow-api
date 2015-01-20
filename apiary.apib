@@ -161,8 +161,10 @@ HOST: https://bloodflow.herokuapp.com/api
 Объект смс авторизации и его параметры
 
 + Parameters
-    + phone (required, string, `380669181948`) ... Номер телефона `phone` клиента
-    
+    + phone (required, string, `380669181948`) ... Номер телефона `phone` клиента, без '+'
+    + id (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` из запроса на отправку СМС
+    + code (required, string, `28045087`) ... Код из смс, полученный пользователем
+
 ### Запрос на отправку СМС пользователю [GET]
 + Response 200 (application/json)
 
@@ -172,12 +174,7 @@ HOST: https://bloodflow.herokuapp.com/api
 
 
 ## Otp [/otp/{id}/{code}]
-Объект смс авторизации и его параметры
 
-+ Parameters
-    + id (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` из запроса на отправку СМС
-    + code (required, string, `28045087`) ... Код из смс, полученный пользователем
-    
 ### Проверка полученного пользователем кода [GET]
 + Response 200 (application/json)
 
