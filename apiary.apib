@@ -11,12 +11,21 @@ HOST: https://bloodflow.herokuapp.com/api
 ### Получение списка пользователей[GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
+    [
+        {
+            "firstName": "Иванов",
+            "secondName": "Иван",
+            "lastName": "Иванович",
+            "city": "Днепропетровск",
+            "phone": "+380661234567",
+            "email": "demo@gmail.com",
+            "blood": 3,
+            "rhesus": "+",
+            "ready": true,
+            "_id": "54be9f25d86a515e79dfb8fa",
+            "__v": 0
+        }
+    ]
 ### Создание пользователя [POST]
 + Request (application/json)
 
@@ -32,7 +41,7 @@ HOST: https://bloodflow.herokuapp.com/api
             "ready":true
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {
             "__v": 0,
