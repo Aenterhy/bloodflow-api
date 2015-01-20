@@ -154,8 +154,38 @@ HOST: https://bloodflow.herokuapp.com/api
             "__v": 0
         }
         
-# SMS Articles
+# Group SMS
 Работа с СМС авторизацией (otp - one -time-password)
 
-## Otp Collection [/articles]
+## Otp [/otp/{phone}]
+Объект смс авторизации и его параметры
+
++ Parameters
+    + phone (required, string, `380669181948`) ... Номер телефона `phone` клиента
+    + id (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` для работы с объектом.
+    
+### Получение пользователя [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+                "__v": 0,
+                "firstName": "Иванов",
+                "secondName": "Иван",
+                "lastName": "Иванович",
+                "city": "Днепропетровск",
+                "phone": "+380661234567",
+                "email": "demo@gmail.com",
+                "blood": 3,
+                "rhesus": "+",
+                "ready": true,
+                "_id": "54be9f25d86a515e79dfb8fa"
+            }
+
+
 
