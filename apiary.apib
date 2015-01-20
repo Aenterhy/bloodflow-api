@@ -17,10 +17,20 @@ HOST: https://bloodflow.herokuapp.com/api
           "id": 2, "title": "Pick-up posters from post-office"
         }]
 
-### Create a Note [POST]
+### Создание пользователя [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { 
+            "firstName": "Иванов", 
+            "secondName": "Иван", 
+            "lastName":"Иванович" 
+            "city": "Днепропетровск", 
+            "phone":"+380661234567", 
+            "email":"demo@gmail.com", 
+            "blood":3, 
+            "rhesus":"+",
+            "ready":true
+        }
 
 + Response 201 (application/json)
 
