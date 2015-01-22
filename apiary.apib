@@ -189,3 +189,76 @@ HOST: https://bloodflow.herokuapp.com/api
             }
 
 
+# Group Images
+Работа с аватарками пользователя
+
+## Images Collection [/images]
+### Получение списка изображений из БД -  будет только для админки[GET]
++ Response 200 (application/json)
+
+        [{
+            "url":"http://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+            "secureUrl":"https://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+            "format":"jpg",
+            "created":"2015-01-22T23:27:28Z",
+            "width":1024,
+            "height":500,
+            "_id":"54c1876022e686e015f9bff2",
+            "__v":0
+        }]
+        
+### Заливка изображения в БД [POST]
+Делаешь через:    
+**@Multipart**   
+**@Post(UPLOAD_IMAGE_URL)**   
+**Image uploadPhoto(@Part("image") TypedFile image);**
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+        {
+            "__v": 0,
+            "url": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+            "secureUrl": "https://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+            "format": "jpg",
+            "created": "2015-01-22T23:27:28Z",
+            "width": 1024,
+            "height": 500,
+            "_id": "54c1876022e686e015f9bff2"
+        }
+
+
+## Image [/users/{id}]
+Объект изображения
+
++ Parameters
+    + id (required, string, `54c1876022e686e015f9bff2`) ... Идентификатор `_id` для работы с объектом.
+
+### Получение аватарки пользователя по id [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+                "__v": 0,
+                "url": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+                "secureUrl": "https://res.cloudinary.com/hhfgxm0qi/image/upload/v1421969248/fox5nbs7gfrv56xoykrd.jpg",
+                "format": "jpg",
+                "created": "2015-01-22T23:27:28Z",
+                "width": 1024,
+                "height": 500,
+                "_id": "54c1876022e686e015f9bff2"
+            }
+
+
+### Удаление изображения - реализовывать не будем[DELETE]
++ Response 204
+
+### Редактирование изображения - реализовывать не будем [PUT]
++ Response 204
