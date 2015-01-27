@@ -12,18 +12,32 @@ HOST: https://bloodflow.herokuapp.com/api
 + Response 200 (application/json)
 
         [{
-            "firstName": "Иванов",
-            "secondName": "Иван",
-            "lastName": "Иванович",
+            "__v": 0,
+            "_id": "54c6ffb8faebf193db3b1b63",
+            "blood": 1,
             "city": "Днепропетровск",
-            "phone": "+380661234567",
-            "email": "demo@gmail.com",
-            "blood": 3,
+            "email": "fantes.mail@gmail.com",
+            "firstName": "Герасименко",
+            "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328297/jcmz3aye1xun1690o9kh.jpg",
+            "lastName": "Вячеславович",
+            "phone": "+380669181748",
+            "ready": false,
             "rhesus": "+",
-            "ready": true,
-            "_id": "54be9f25d86a515e79dfb8fa",
-            "__v": 0
-        }]
+            "secondName": "Роман"
+        },{
+            "__v": 0,
+            "_id": "54c6ff9dfaebf193db3b1b62",
+            "blood": 3,
+            "city": "Донецк",
+            "email": "fantes.mail@gmail.com",
+            "firstName": "Данилов",
+            "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328374/g0dbepurojsqvgulifnl.png",
+            "lastName": "Владимирович",
+            "phone": "+380669181748",
+            "ready": false,
+            "rhesus": "+",
+            "secondName": "Андрей"
+        }]        
         
 ### Создание пользователя [POST]
 + Request (application/json)
@@ -31,36 +45,37 @@ HOST: https://bloodflow.herokuapp.com/api
         { 
             "firstName": "Иванов", 
             "secondName": "Иван", 
-            "lastName":"Иванович",
+            "lastName":"Иванович",     
             "city": "Днепропетровск", 
-            "phone":"+380661234567", 
+            "phone":"+380661234567",  
             "email":"demo@gmail.com", 
-            "blood":3, 
-            "rhesus":"+",
-            "ready":true
+            "blood":3,                
+            "rhesus":"+",             
+            "ready":true, 
+            "image":"http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328374/g0dbepurojsqvgulifnl.png",
+            "password":"*******"
         }
-
+        
 + Response 200 (application/json)
 
         {
             "__v": 0,
-            "firstName": "Иванов",
+            "firstName": "Иванов",    
             "secondName": "Иван",
-            "lastName": "Иванович",
+            "lastName": "Иванович",  
             "city": "Днепропетровск",
             "phone": "+380661234567",
             "email": "demo@gmail.com",
-            "blood": 3,
-            "rhesus": "+",
+            "blood": 3,              
+            "rhesus": "+",           
             "ready": true,
+            "image":"http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328374/g0dbepurojsqvgulifnl.png", 
             "_id": "54be9f25d86a515e79dfb8fa"
         }
+        
 
 ## User [/users/{id}]
 Объект пользователя и его параметры
-
-+ Parameters
-    + id (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` для работы с объектом.
 
 ### Получение пользователя [GET]
 + Response 200 (application/json)
