@@ -86,52 +86,52 @@ HOST: https://bloodflow.herokuapp.com/api
 
     + Body
 
-            {
-                "__v": 0,
-                "firstName": "Иванов",
-                "secondName": "Иван",
-                "lastName": "Иванович",
-                "city": "Днепропетровск",
-                "phone": "+380661234567",
-                "email": "demo@gmail.com",
-                "blood": 3,
-                "rhesus": "+",
-                "ready": true,
-                "_id": "54be9f25d86a515e79dfb8fa"
-            }
-
-### Удаление пользователя - не работает ещё [DELETE]
-+ Response 204
+        {
+            "__v": 0,
+            "_id": "54c6ffb8faebf193db3b1b63",
+            "blood": 1,
+            "city": "Днепропетровск",
+            "email": "fantes.mail@gmail.com",
+            "firstName": "Герасименко",
+            "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328297/jcmz3aye1xun1690o9kh.jpg",
+            "lastName": "Вячеславович",
+            "phone": "+380669181748",
+            "ready": false,
+            "rhesus": "+",
+            "secondName": "Роман"
+        }
 
 ### Редактирование пользователя [PUT]
 + Request (application/json)
 
-        { 
-            "firstName": "Иванов", 
-            "secondName": "Иван", 
-            "lastName":"Иванович",
-            "city": "Днепропетровск", 
-            "phone":"+380661234567", 
-            "email":"demo@gmail.com", 
-            "blood":3, 
-            "rhesus":"+",
-            "ready":true
+        {
+            "blood": 1,
+            "city": "Днепропетровск",
+            "email": "fantes.mail@gmail.com",
+            "firstName": "Герасименко",
+            "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328297/jcmz3aye1xun1690o9kh.jpg",
+            "lastName": "Вячеславович",
+            "phone": "+380669181748",
+            "ready": false,
+            "rhesus": "+",
+            "secondName": "Роман"
         }
 
 + Response 200 (application/json)
 
         {
-            "firstName": "Иванов",
-            "secondName": "Петр",
-            "lastName": "Петрович",
-            "city": "Киев",
-            "phone": "+380661231231",
-            "email": "demo@gmail.com",
-            "blood": 2,
+            "__v": 0,
+            "_id": "54c6ffb8faebf193db3b1b63",
+            "blood": 1,
+            "city": "Днепропетровск",
+            "email": "fantes.mail@gmail.com",
+            "firstName": "Герасименко",
+            "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328297/jcmz3aye1xun1690o9kh.jpg",
+            "lastName": "Вячеславович",
+            "phone": "+380669181748",
+            "ready": false,
             "rhesus": "+",
-            "ready": true,
-            "_id": "54be9f25d86a515e79dfb8fa",
-            "__v": 0
+            "secondName": "Роман"
         }
         
         
