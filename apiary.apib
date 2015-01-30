@@ -168,6 +168,80 @@ HOST: https://bloodflow.herokuapp.com/api
             "_id": "54bec0d6bc7a3529a75b13d6",
             "__v": 0
         }
+
+
+# Group Posts
+Работа с постами пользователей, объявлениями
+
+## Posts Collection [/posts]
+### Получение списка статей[GET]
++ Response 200 (application/json)
+
+        [{
+            "__v": 0,
+            "title": "Требуется кровь 4+",
+            "description": "В больницу Мечникова, воинам АТО",
+            "city": "В больницу Мечникова, воинам АТО",
+            "dueDate": "21.02.15",
+            "_id": "54caccc38e6c70c21ec357b4",
+            "views": 0,
+            "created": "2015-01-30T00:13:55.281Z",
+            "creator": [
+                {
+                    "__v": 0,
+                    "_id": "54c8043a6e4c610c00d26f62",
+                    "ready": false,
+                    "rhesus": "+",
+                    "blood": 4,
+                    "email": "fggg@gg.com",
+                    "secondName": "банка",
+                    "firstName": "аппарат",
+                    "friends": []
+                }
+            ]
+        }]        
+        
+## Post [/posts/{id}]
+
++ Parameters
+    + id (required, string, `54c8043a6e4c610c00d26f62`) ... Идентификатор пользователя (потом заменю на токен)
+
+### Запрос на создание нового поста [GET]
++ Request (application/json)
+
+        { 
+            "title": "Заголовок поста", 
+            "description": "Описание поста", 
+            "city":"Город",
+            "dueDate": "21.02.15"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "__v": 0,
+            "title": "Требуется кровь 4+",
+            "description": "В больницу Мечникова, воинам АТО",
+            "city": "В больницу Мечникова, воинам АТО",
+            "dueDate": "21.02.15",
+            "_id": "54caccc38e6c70c21ec357b4",
+            "views": 0,
+            "created": "2015-01-30T00:13:55.281Z",
+            "creator": [
+                {
+                    "__v": 0,
+                    "_id": "54c8043a6e4c610c00d26f62",
+                    "ready": false,
+                    "rhesus": "+",
+                    "blood": 4,
+                    "email": "fggg@gg.com",
+                    "secondName": "банка",
+                    "firstName": "аппарат",
+                    "friends": []
+                }
+            ]
+        }
+
         
 # Group SMS
 Работа с СМС авторизацией (otp - one -time-password)
