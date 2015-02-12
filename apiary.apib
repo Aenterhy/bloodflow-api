@@ -3,7 +3,6 @@ HOST: https://bloodflow.herokuapp.com/api
 
 # Bloodflow API 
 
-
 # Group Users
 Работа с пользователями
 
@@ -134,6 +133,90 @@ HOST: https://bloodflow.herokuapp.com/api
             "secondName": "Роман"
         }
         
+# Group Friends
+Получение списка друзей, отправка запроса на добавление в друзья
+
+## Friend [/friends/{id}]
+Работа со списками друзей пользователя
+Статусы: 
+
+**accepted** - оба друг у друга в друзьях   
+**requested** - это значит что ты человеку кинул запрос на дружбу   
+**pending** - это значит что тебе кинули запрос на дружбу   
+
+### Получение списка друзей пользователя [GET]
++ Parameters
+    + id (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` пользователя (текущий или любой другой, если ты хочешь просмотреть его френдов)
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            [
+              {
+                "_id": "54c6ffb8faebf193db3b1b63",
+                "added": "2015-01-27T03:04:05.603Z",
+                "status": "accepted",
+                "friend": {
+                  "__v": 0,
+                  "_id": "54c6ffb8faebf193db3b1b63",
+                  "blood": 1,
+                  "city": "Днепропетровск",
+                  "email": "fantes.mail@gmail.com",
+                  "firstName": "Герасименко",
+                  "image": "http://res.cloudinary.com/hhfgxm0qi/image/upload/v1422328297/jcmz3aye1xun1690o9kh.jpg",
+                  "lastName": "Вячеславович",
+                  "phone": "+380669181748",
+                  "ready": false,
+                  "rhesus": "+",
+                  "secondName": "Роман"
+                }
+              }
+            ]
+            
+## Friendsip [/friends/{id1}/{id2}]
+Запрос на добавление пользователя во френды
+Для подтверждения дружбы необходимо отправить запрос поменяв местами id1 и id2 - это служит подтверждением
+
+### Отправка запроса на дружбу пользователем [GET]
++ Parameters
+    + id1 (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` пользователя (текущий)
+    + id2 (required, string, `54be9f25d86a515e79dfb8fa`) ... Идентификатор `_id` пользователя (которого хочешь добавить в друзья)
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            [
+              {
+                "_id": "54c6ffb8faebf193db3b1b63",
+                "status": "pending",
+                "added": "2015-01-27T03:04:05.603Z",
+                "friend": {
+                  "__v": 0,
+                  "_id": "54c6ffb8faebf193db3b1b63",
+                  "blood": 1,
+                  "city": "Днепропетровск",
+                  "email": "fantes.mail@gmail.com",
+                  "firstName": "Герасименко",
+                  "lastName": "Вячеславович",
+                  "phone": "+380669181748",
+                  "ready": false,
+                  "rhesus": "+",
+                  "secondName": "Роман"
+                }
+              }
+            ]            
+
+
         
 # Group Articles
 Работа со статьяими, и справочной информацией для пользователя
