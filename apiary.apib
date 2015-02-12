@@ -133,6 +133,43 @@ HOST: https://bloodflow.herokuapp.com/api
             "secondName": "Роман"
         }
         
+        
+# Group Авторизация
+## Авторизация [/auth/]
+
+Проверка логина/пароля пользователя и выдача для пользования токена.
+Система токенов - вечная (кроме случая принудительного logourt)
+
+### Получение токена для работы с АПИ [POST]
++ Request (www-form-urlencoded)
+    
+        login: fantes.mail@gmail.com
+        password: fantes.mail@gmail.com
+
++ Response 200 (application/json)
+
+    + Header
+
+            Token: token value
+
+    + Body
+
+            {
+                "firstName": "Герасименко",
+                "secondName": "Роман",
+                "lastName": "Вячеславович",
+                "city": "Днепропетровск",
+                "phone": "+380669181748",
+                "email": "fantes.mail@gmail.com",
+                "blood": 3,
+                "rhesus": "+",
+                "ready": false,
+                "password": "$2a$08$1LiY54m1859Zvk9yabHXDOSmpmB4MRR3WHqPuZhkB2TX1Iu8pTNfy",
+                "_id": "54dc08f32ef4d89894b553d3",
+                "__v": 0
+            }
+
+
 # Group Friends
 Получение списка друзей, отправка запроса на добавление в друзья
 
